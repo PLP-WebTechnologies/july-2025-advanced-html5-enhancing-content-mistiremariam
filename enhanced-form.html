@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enhanced HTML5 Content & Forms</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f8f9fa;
+      line-height: 1.6;
+    }
+    header, main, footer {
+      max-width: 900px;
+      margin: auto;
+    }
+    h1, h2, h3 {
+      color: #333;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #f1f1f1;
+    }
+    fieldset {
+      margin-bottom: 15px;
+      padding: 15px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    legend {
+      font-weight: bold;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-top: 4px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #28a745;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>HTML5 Content Showcase</h1>
+  <p>This page demonstrates lists, tables, media embedding, and a complete HTML5 form with native validation.</p>
+</header>
+
+<main>
+  <!-- Lists Section -->
+  <section>
+    <h2>Favorite Programming Languages</h2>
+    <ul>
+      <li>Python</li>
+      <li>JavaScript</li>
+      <li>Java</li>
+      <li>C++</li>
+    </ul>
+
+    <h3>Steps to Submit Your Assignment</h3>
+    <ol>
+      <li>Clone the repository from GitHub Classroom.</li>
+      <li>Edit the <code>enhanced-form.html</code> file.</li>
+      <li>Test your HTML5 validation in the browser.</li>
+      <li>Commit and push changes back to GitHub.</li>
+    </ol>
+  </section>
+
+  <!-- Table Section -->
+  <section>
+    <h2>Student Grades Table</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Student Name</th>
+          <th>Assignment</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Alice Johnson</td>
+          <td>HTML Basics</td>
+          <td>A</td>
+        </tr>
+        <tr>
+          <td>Bob Smith</td>
+          <td>CSS Styling</td>
+          <td>B+</td>
+        </tr>
+        <tr>
+          <td>Charlie Brown</td>
+          <td>JavaScript Intro</td>
+          <td>A-</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Media Section -->
+  <section>
+    <h2>Media Showcase</h2>
+    <figure>
+      <img src="https://via.placeholder.com/600x200" alt="Placeholder Banner" width="100%">
+      <figcaption>Sample placeholder image for demonstration.</figcaption>
+    </figure>
+
+    <h3>Audio Example</h3>
+    <audio controls>
+      <source src="sample-audio.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+
+    <h3>Video Example</h3>
+    <video controls width="100%">
+      <source src="sample-video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <!-- Form Section -->
+  <section>
+    <h2>Registration Form</h2>
+    <form action="#" method="POST" novalidate>
+
+      <!-- Personal Info -->
+      <fieldset>
+        <legend>Personal Information</legend>
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" 
+               placeholder="John Doe" required 
+               pattern="^[A-Za-z\s]{3,50}$" 
+               title="Name must be 3-50 letters only">
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" 
+               placeholder="you@example.com" required autocomplete="email">
+
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" 
+               placeholder="+251900000000" required
+               pattern="^\+?\d{10,13}$"
+               title="Enter 10–13 digits, optional + at start">
+      </fieldset>
+
+      <!-- Account Details -->
+      <fieldset>
+        <legend>Account Details</legend>
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" 
+               required minlength="5" maxlength="15" autocomplete="username">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"
+               required minlength="8"
+               pattern="^(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}$"
+               title="At least 8 characters, one uppercase letter, and one number"
+               autocomplete="new-password">
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password"
+               required minlength="8" autocomplete="new-password">
+      </fieldset>
+
+      <!-- Other Info -->
+      <fieldset>
+        <legend>Additional Information</legend>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required min="18" max="99">
+
+        <label for="country">Country:</label>
+        <select id="country" name="country" required>
+          <option value="">Select a country</option>
+          <option value="ET">Ethiopia</option>
+          <option value="US">United States</option>
+          <option value="UK">United Kingdom</option>
+          <option value="CA">Canada</option>
+        </select>
+
+        <label>
+          <input type="checkbox" name="terms" required>
+          I agree to the terms and conditions.
+        </label>
+      </fieldset>
+
+      <button type="submit">Submit Registration</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 HTML5 Assignment Demo. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
