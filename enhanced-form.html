@@ -4,41 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Enhanced HTML5 Content & Forms</title>
+
+  <!-- Correct Google Font for Raleway -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      background-color: #f8f9fa;
+      font-family: 'Raleway', Tahoma, sans-serif;
+      margin: 0;
+      background-color: #f4f6f8;
+      color: #333;
       line-height: 1.6;
     }
-    header, main, footer {
-      max-width: 900px;
-      margin: auto;
+    header {
+      background: linear-gradient(135deg, #df4eb6, #63cfe0);
+      color: white;
+      padding: 20px;
+      text-align: center;
     }
-    h1, h2, h3 {
-      color: #333;
+    header h1 {
+      margin: 0;
+    }
+    main {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    h2 {
+      color: #4e73df;
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 5px;
     }
     table {
       border-collapse: collapse;
       width: 100%;
-      margin-top: 10px;
+      margin: 15px 0;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
     }
     th, td {
-      border: 1px solid #ccc;
-      padding: 8px;
+      border: 1px solid #ddd;
+      padding: 10px;
       text-align: left;
     }
     th {
       background-color: #f1f1f1;
     }
+    figure {
+      margin: 15px 0;
+    }
     fieldset {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       padding: 15px;
-      border-radius: 5px;
+      border-radius: 8px;
       border: 1px solid #ccc;
+      background: white;
+      box-shadow: 0 0 5px rgba(0,0,0,0.05);
     }
     legend {
       font-weight: bold;
+      color: #1cc88a;
     }
     label {
       display: block;
@@ -53,16 +77,23 @@
       border: 1px solid #ccc;
     }
     button {
-      background-color: #28a745;
+      background-color: #1cc88a;
       color: white;
       padding: 10px 15px;
       border: none;
       cursor: pointer;
       border-radius: 4px;
-      margin-top: 10px;
+      font-size: 16px;
     }
     button:hover {
-      background-color: #218838;
+      background-color: #17a673;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #4e73df;
+      color: white;
+      margin-top: 30px;
     }
   </style>
 </head>
@@ -70,7 +101,7 @@
 
 <header>
   <h1>HTML5 Content Showcase</h1>
-  <p>This page demonstrates lists, tables, media embedding, and a complete HTML5 form with native validation.</p>
+  <p>A demo of lists, tables, media, and HTML5 form validation</p>
 </header>
 
 <main>
@@ -83,14 +114,6 @@
       <li>Java</li>
       <li>C++</li>
     </ul>
-
-    <h3>Steps to Submit Your Assignment</h3>
-    <ol>
-      <li>Clone the repository from GitHub Classroom.</li>
-      <li>Edit the <code>enhanced-form.html</code> file.</li>
-      <li>Test your HTML5 validation in the browser.</li>
-      <li>Commit and push changes back to GitHub.</li>
-    </ol>
   </section>
 
   <!-- Table Section -->
@@ -106,19 +129,24 @@
       </thead>
       <tbody>
         <tr>
-          <td>Alice Johnson</td>
+          <td>Abebe Kefelegn</td>
           <td>HTML Basics</td>
           <td>A</td>
         </tr>
         <tr>
-          <td>Bob Smith</td>
+          <td>Almaz Bedlu</td>
           <td>CSS Styling</td>
           <td>B+</td>
         </tr>
         <tr>
-          <td>Charlie Brown</td>
+          <td>Kebede Tessema</td>
           <td>JavaScript Intro</td>
           <td>A-</td>
+        </tr>
+        <tr>
+          <td>Getahun Girma</td>
+          <td>Portifolio building Assignment</td>
+          <td>A+</td>
         </tr>
       </tbody>
     </table>
@@ -127,22 +155,29 @@
   <!-- Media Section -->
   <section>
     <h2>Media Showcase</h2>
-    <figure>
-      <img src="https://via.placeholder.com/600x200" alt="Placeholder Banner" width="100%">
-      <figcaption>Sample placeholder image for demonstration.</figcaption>
-    </figure>
+  <figure>
+  <img 
+    src="https://via.placeholder.com/800x300.png?text=Web+Development" 
+    alt="Web Development Banner" 
+    width="100%">
+  <figcaption>Sample placeholder image for demonstration.</figcaption>
+</figure>
 
-    <h3>Audio Example</h3>
+
+
+    <h3>Audio Example: Coding Podcast</h3>
     <audio controls>
-      <source src="sample-audio.mp3" type="audio/mpeg">
+      <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
 
-    <h3>Video Example</h3>
-    <video controls width="100%">
-      <source src="sample-video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+    <h3>Video Example: YouTube Coding Tutorial</h3>
+    <iframe width="100%" height="400" 
+            src="https://www.youtube.com/embed/pQN-pnXPaVg" 
+            title="HTML Full Course for Beginners" 
+            frameborder="0" 
+            allowfullscreen>
+    </iframe>
   </section>
 
   <!-- Form Section -->
@@ -155,7 +190,7 @@
         <legend>Personal Information</legend>
         <label for="fullname">Full Name:</label>
         <input type="text" id="fullname" name="fullname" 
-               placeholder="John Doe" required 
+               placeholder="Mistiremariam Girma" required 
                pattern="^[A-Za-z\s]{3,50}$" 
                title="Name must be 3-50 letters only">
 
